@@ -16,8 +16,14 @@ def delete
 	
 end
 
-def edit
-	
+def create
+	@post = Post.new(params[:post]) #<- older version
+	#@post = Post.new(params.require(:post).permit(:title,:content))
+	if @post.save
+	redirect_to posts_path, :notice => "Successfully created!"
+	else
+	render "new"
+    end
 end
 
 def update
