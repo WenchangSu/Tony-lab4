@@ -4,8 +4,8 @@ def creat
 	
 end
 
-def read
-	
+def show
+	@post = Post.find(params[:id])
 end
 
 def index
