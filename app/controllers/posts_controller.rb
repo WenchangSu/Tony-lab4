@@ -37,7 +37,12 @@ def edit
 end
 
 def destroy
+	@post = Post.find(params[:id])
+	if @post.destroy
+		flash[:alert] = "Good was successfully deleted"
+	end
 
+	redirect_to posts_path
 end
 
 
